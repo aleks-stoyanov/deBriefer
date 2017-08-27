@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, AfterViewInit } from '@angular/core';
+declare var $:any;
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+
+
+  
+  ngAfterViewInit(){
+           $(document).ready(function(){
+             //alert("asdasdasd");
+             });
+
+     }
 }

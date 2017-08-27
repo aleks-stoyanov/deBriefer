@@ -1,0 +1,26 @@
+.errand {
+    border: 0px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+
+.errand .badge {
+    position: absolute;
+    left: -30px;
+}
+.badge-danger {background-color: #b94a48;}
+.badge-danger:hover {background-color: #953b39;}
+.badge-warning {background-color: #f89406;}
+.badge-warning:hover {background-color: #c67605;}
+.badge-success {background-color: #468847;}
+.badge-success:hover {background-color: #356635;}
+.badge-info {background-color: #3a87ad;}
+.badge-info:hover {background-color: #2d6987;}
+.badge-inverse {background-color: #333333;}
+.badge-inverse:hover {background-color: #1a1a1a;}
+
+.errand-details ul {list-style: none; padding: 0px;}
+.errand-details ul li {display: inline-block; padding-right: 10px;}
+.errand-details ul li span {color: #929aa2; text-transform: uppercase; font-weight: 600; font-size: 0.7em; display: inline-block; padding-right: 2px;}
+
+.task-progress .progress-circle {display: inline-block; margin: 0px 0px 0px 8px;}
+.task-progress .progress-circle .progress-circle__overlay {color:#929aa2; text-transform: uppercase; font-weight: 600; }

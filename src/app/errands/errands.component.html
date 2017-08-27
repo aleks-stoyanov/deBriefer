@@ -1,0 +1,13 @@
+<div class="errands clearfix">
+    <div class="col-xs-10 col-xs-offset-2 col-md-11 col-md-offset-1"> 
+        <app-errand-list-manager></app-errand-list-manager>
+        <app-errand-list></app-errand-list>
+
+        <app-errand-details    
+        *ngIf="selectedErrand; else infoText" 
+        [errand]="selectedErrand"></app-errand-details>
+        <ng-template #infoText>
+            <p>Please Select an Errand</p>
+        </ng-template>
+    </div>
+</div>

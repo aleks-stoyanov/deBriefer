@@ -1,0 +1,20 @@
+.drawer-hero {position: relative;min-height: 270px;}
+.drawer-hero img {position: absolute; z-index: 200;}
+.drawer-hero .nav {position: relative; z-index: 201; }
+.drawer-hero .nav.navbar-right {margin-right: 0px}
+.drawer-hero .nav li a { 
+    color: #fff;
+    padding: 16px 16px 16px 16px;
+    opacity: 0.54;
+    cursor: pointer;    
+    -webkit-transition: opacity 0.4s ease-out;
+    -moz-transition: opacity 0.4s ease-out;
+    transition: opacity 0.4s ease-out;
+}
+.drawer-hero .nav li a:hover { 
+    background: transparent;
+    opacity: 1;
+    -webkit-transition: opacity 0.4s ease-out;
+    -moz-transition: opacity 0.4s ease-out;
+    transition: opacity 0.4s ease-out;
+}

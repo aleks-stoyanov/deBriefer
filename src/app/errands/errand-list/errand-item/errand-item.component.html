@@ -1,0 +1,30 @@
+
+<div class="list-group-item errand clearfix"
+(click)="onSelected()">
+    <div class="pull-left errand-details">
+        <span class="badge badge-default badge-pill badge-danger">{{errand.urgency}}</span>
+        <h4 class="list-group-item-heading">{{errand.name}}</h4>
+        <ul>
+        <li><span>pc</span>{{errand.pc}}</li>
+        <li><span>mc</span>{{errand.mc}}</li>
+        <li><span>launch</span>{{errand.launch}}</li>
+        </ul>
+    </div>
+    <div class="pull-right task-progress">
+        <div class="progress-circle" 
+            *ngFor="let task of errand.taskArray"
+            attr.data-progress="{{task.progress}}">
+            <div class="circle">
+                <div class="full progress-circle__slice">
+                    <div class="progress-circle__fill"></div>
+            </div>
+                <div class="progress-circle__slice">
+                    <div class="progress-circle__fill"></div>
+                    <div class="progress-circle__fill progress-circle__bar"></div>
+                </div>
+            </div>
+            <div class="progress-circle__overlay">{{task.phase}}</div>
+        </div>
+    </div>
+</div>
+      

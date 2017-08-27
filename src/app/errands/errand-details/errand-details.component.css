@@ -1,0 +1,60 @@
+.navbar-right {margin-right: -15px;}
+.navbar-nav>li>a {padding-top: 0px;padding-bottom: 0px;}
+.navbar-nav>li>a { 
+    color: #8e9397;
+    padding: 0px 8px 0px 8px;
+    opacity: 0.54;
+    cursor: pointer;    
+    -webkit-transition: opacity 0.4s ease-out;
+    -moz-transition: opacity 0.4s ease-out;
+    transition: opacity 0.4s ease-out;
+}
+.navbar-nav>li>a:hover { 
+    background: transparent;
+    opacity: 1;
+    -webkit-transition: opacity 0.4s ease-out;
+    -moz-transition: opacity 0.4s ease-out;
+    transition: opacity 0.4s ease-out;
+}
+
+.errand-details-header {margin: 0px 0px 0px 54px; position: relative;}
+.errand-details-header .btn-complete {position: absolute;
+     left: -40px;
+     padding: 0px;
+     margin: 0px;
+     font-size: 2.3em;
+     background: transparent;
+     color: #8e9397;
+     opacity: 0.54;
+
+    -webkit-transition: opacity 0.4s ease-out;
+    -moz-transition: opacity 0.4s ease-out;
+    transition: opacity 0.4s ease-out;
+}
+.errand-details-header .btn-complete:hover {
+    opacity: 1;
+    -webkit-transition: opacity 0.4s ease-out;
+    -moz-transition: opacity 0.4s ease-out;
+    transition: opacity 0.4s ease-out;
+}
+
+h3 {margin: 24px 0px 0px 54px;color: #959da5; font-weight: 600;}
+
+
+.list-group-heading {border-bottom: 1px solid #f3f6fb; margin: 0px 0px 0px 54px; padding: 1px 1px;}
+.list-group-heading h4 {font-size: 1em; font-weight: 600; text-transform: uppercase; color: #1d98e7; margin: 24px 0px 8px 0px;}
+.list-group-heading .navbar-right {margin: 10px 8px 0px 0px; }
+.list-group-heading button { text-align:center; font-size: 0.8em; border: 2px solid #c6cbcf; border-radius: 50%; color: #c6cbcf; padding: 3px; height: 30px; width: 30px; background: transparent; }
+.list-group-heading button:hover {background-color: #1d98e7; border-color: #1d98e7;color: #fff;}
+
+
+.list-group-item {border: none; margin: 0px 0px 0px 40px;}
+.list-group-item-heading {font-weight: 800;}
+
+.task-progress {position: absolute; left: -30px;}
+
+.progress-circle {margin: 0px auto;width: 36px;height: 36px;}
+.progress-circle .progress-circle__slice, .progress-circle .progress-circle__fill {width: 36px;height: 36px;}
+.progress-circle .progress-circle__slice {clip: rect(0px, 36px, 36px, 18px);}
+.progress-circle .progress-circle__slice .progress-circle__fill {clip: rect(0px, 18px, 36px, 0px);background-color: #2db8e8;}
+.progress-circle .progress-circle__overlay {width: 30px;height: 30px;margin-left: 3px;margin-top: 3px;line-height: 30px;}
