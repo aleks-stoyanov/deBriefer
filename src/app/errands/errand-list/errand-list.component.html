@@ -1,5 +1,9 @@
 <div class="row">
   <div class="col-xs-12">
+    <button class="btn btn-primary" (click)="onSaveData()">Save data</button>
+    <button class="btn btn-primary" (click)="onFetchData()">Get data</button>
+    <button class="btn btn-primary" (click)="onGetTasks()">Get Tasks</button>
+    <button class="btn btn-primary" (click)="onPostTasks()">Post Tasks</button>
     <div class="list-group">
         <app-errand-item 
         *ngFor = "let errandEl of errands"

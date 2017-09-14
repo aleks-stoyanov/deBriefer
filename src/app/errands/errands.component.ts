@@ -7,7 +7,7 @@ import { ErrandService } from './errand.service';
   selector: 'app-errands',
   templateUrl: './errands.component.html',
   styleUrls: ['./errands.component.css'],
-  providers: [ErrandService]
+  providers: []
 })
 export class ErrandsComponent implements OnInit {
   

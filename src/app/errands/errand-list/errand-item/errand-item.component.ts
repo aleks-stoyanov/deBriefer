@@ -11,10 +11,9 @@ import { ErrandService } from '../../errand.service';
 export class ErrandItemComponent implements OnInit {
   @Input() errand:Errand;
 
-  constructor(private errandService: ErrandService) { }
+  constructor(private errandService: ErrandService) {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   onSelected() {
     this.errandService.errandSelected.emit(this.errand);

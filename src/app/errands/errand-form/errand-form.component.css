@@ -1,0 +1,24 @@
+/* .modal-dialog {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin:0;
+  }
+  .modal-content {
+    height: 100%;
+    border-radius: 0;
+    color:white;
+    overflow:auto;
+    
+  }
+  .modal-title
+  {
+    font-size: 3em;
+    font-weight: 300;
+    margin: 0 0 20px 0;
+  } */
+
+  input.ng-invalid.ng-touched,
+  select.ng-invalid.ng-touched {
+    border:1px solid red;
+  }
