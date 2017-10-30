@@ -38,14 +38,14 @@
     transition: opacity 0.4s ease-out;
 }
 
-h3 {margin: 24px 0px 0px 54px;color: #959da5; font-weight: 600;}
+h3 {margin: 24px 0px 0px 0px;color: #959da5; font-weight: 600;}
 
 
-.list-group-heading {border-bottom: 1px solid #f3f6fb; margin: 0px 0px 0px 54px; padding: 1px 1px;}
+.list-group-heading {border-bottom: 1px solid #f3f6fb; margin: 0px 0px 30px 54px; padding: 1px 1px;}
 .list-group-heading h4 {font-size: 1em; font-weight: 600; text-transform: uppercase; color: #1d98e7; margin: 24px 0px 8px 0px;}
-.list-group-heading .navbar-right {margin: 10px 8px 0px 0px; }
-.list-group-heading button { text-align:center; font-size: 0.8em; border: 2px solid #c6cbcf; border-radius: 50%; color: #c6cbcf; padding: 3px; height: 30px; width: 30px; background: transparent; }
-.list-group-heading button:hover {background-color: #1d98e7; border-color: #1d98e7;color: #fff;}
+.list-group-heading .navbar-right {margin: 10px 8px 0px 0px; position: relative; bottom: -26px; }
+.list-group-heading button { text-align:center; font-size: 12px;line-height: 23px; border: 2px solid #1d98e7; border-radius: 50%; color: #fff; padding: 3px; height: 30px; width: 30px; background: #1d98e7; }
+.list-group-heading button:hover {background-color: #0EC43F; border-color: #0EC43F;}
 
 
 .list-group-item {border: none; margin: 0px 0px 0px 40px;}

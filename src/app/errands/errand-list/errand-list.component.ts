@@ -19,6 +19,7 @@ export class ErrandListComponent implements OnInit {
   constructor(private errandService: ErrandService, private userStorageService: UserStorageService, private taskListService: TaskListService) { }
 
   ngOnInit() {
+    this.onGetErrands();
     this.errandService.errandsChanged
       .subscribe(
         (errands:Errand[]) => {

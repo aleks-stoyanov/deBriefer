@@ -2,49 +2,48 @@
   <div class="col-xs-12">
       <div class="errand-details">
         <div class="errand-details-header">
-          <button class="btn btn-icon btn-complete">
-            <i class="glyphicon glyphicon-ok-circle"></i>
-          </button>
-          <h2>[1129]</h2>
-          <p>{{errand.name}}</p>             
-        </div>
-        
-  
-        <h3>Activities</h3>  
+          <h2>{{errand.name | slice:0:6}}</h2>
+          <p>{{errand.name | slice:6}}</p>             
+        </div> 
   
         <div class="list-group errand-phase">
           <div class="list-group-heading">
             <ul class="nav navbar-nav navbar-right" role="navigation">                    
               <li><button class="btn btn-icon"><i class="glyphicon glyphicon-plus"></i></button></li>   
             </ul>
-
-            <h4>Coordination</h4>
-
-          </div>
+            <h3>Tasks</h3> 
+          </div>               
           
-          <div class="list-group-item"> <!-- task description -->
+          <div class="list-group-item" *ngFor="let task of errand.taskArray"> <!-- task description -->
             <ul class="nav navbar-nav navbar-right" role="navigation">                    
-              <li><a title="Close Errand Drawer"><i class="glyphicon glyphicon-comment"></i></a></li>   
-              <li><a title="Close Errand Drawer"><i class="glyphicon glyphicon-arrow-right"></i></a></li>   
+              <li class="dropdown">
+                <a  class="dropdown-toggle" data-toggle="dropdown" title="List for Feedback"><i class="glyphicon glyphicon-star"></i></a>  
+                <ul class="dropdown-menu">
+                  <li class="dropdown-header">Select a Task Type</li>
+                  <li><a>Creative Task</a></li>
+                  <li><a>Front end task</a></li>
+                </ul>
+              </li>
+              <li><a target="_blank" [href]="'https://thetaxbackgroup.teamwork.com/#tasks/' + task.taskID" title="Open task in a new tab"><i class="glyphicon glyphicon-arrow-right"></i></a></li>   
             </ul>
             
             <div class="task-progress">
-                <div class="progress-circle" data-progress="25">
-                    <div class="circle">
-                        <div class="full progress-circle__slice">
-                            <div class="progress-circle__fill"></div>
+              <div class="progress-circle"                   
+                  attr.data-progress="{{task.progress}}">
+                  <div class="circle">
+                      <div class="full progress-circle__slice">
+                          <div class="progress-circle__fill"></div>
+                  </div>
+                      <div class="progress-circle__slice">
+                          <div class="progress-circle__fill"></div>
+                          <div class="progress-circle__fill progress-circle__bar"></div>
                       </div>
-                        <div class="progress-circle__slice">
-                            <div class="progress-circle__fill"></div>
-                            <div class="progress-circle__fill progress-circle__bar"></div>
-                        </div>
-                    </div>
-                    <div class="progress-circle__overlay">25</div>
-                </div>
+                  </div>
+                  <div class="progress-circle__overlay">{{task.progress}}%</div>
+              </div>
             </div>
-
-            <h5 class="list-group-item-heading">Name of the coordination task</h5>
-            <p class="small list-group-item-text">(23/07/2017 - 27/07/2017)</p>
+            <h5 class="list-group-item-heading">{{task.taskName}}</h5>
+            <p class="small list-group-item-text">{{task.taskAssignee}}</p>
           </div>
         </div>
       </div>      
