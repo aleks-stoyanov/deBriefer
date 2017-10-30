@@ -4,11 +4,12 @@
     <div class="pull-left errand-details">
         <span class="badge badge-default badge-pill badge-danger">{{errand.urgency}}</span>
         <h4 class="list-group-item-heading">{{errand.name}}</h4>
-        <ul>
+        <p>{{errand.description}}</p>
+        <!-- <ul>
         <li><span>pc</span>{{errand.pc}}</li>
         <li><span>mc</span>{{errand.mc}}</li>
         <li><span>launch</span>{{errand.launch}}</li>
-        </ul>
+        </ul> -->
     </div>
     <div class="pull-right task-progress">
         <div class="progress-circle" 
@@ -23,7 +24,7 @@
                     <div class="progress-circle__fill progress-circle__bar"></div>
                 </div>
             </div>
-            <div class="progress-circle__overlay">{{task.phase}}</div>
+            <div class="progress-circle__overlay">{{task.progress}}</div>
         </div>
     </div>
 </div>

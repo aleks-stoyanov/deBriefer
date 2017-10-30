@@ -16,10 +16,10 @@ export class TaskListService {
     month = this.date.getMonth() + 1;
     day = this.date.getDate();
     company = "thetaxbackgroup";
-    // key = "twp_q96YiLmqi2Hg9C2B8DcmDbtWXi67";
     key = "love349marker";
-
+    project_id = "400900";
     tasklist_id = "1513908";
+    
     task_name = "This is an example task created with AJAX using JSON.";
     due_date = this.date.getFullYear() + (this.month < 10 ? '0' : '') + this.month + (this.day < 10 ? '0' : '') + this.day;    
     json = {"todo-item": { "content": this.task_name, "due-date": this.due_date }};
@@ -37,16 +37,73 @@ export class TaskListService {
         .map(
             (response: Response) => {
                 const tasks = response.json();
-                
-                // for(const task of tasks){
-                //     task.content = 'jsdhfjsgfj' + task.content;
-                // }
                 return tasks;
-                
-
             }
         );
     }
+
+    postErrand(url:string, errandName:string, errandDescription: string, key:string){
+        const headers = new Headers({"Authorization": "BASIC " + window.btoa(this.key + ":xxx")});
+        const errandJson = {"todo-list": { "name": errandName, "description": errandDescription }};
+        console.log(url);
+        console.log(errandJson);
+        console.log(headers);
+        return this.http.post(url, errandJson, {headers})
+        .subscribe(
+            (response: Response) => {
+                const resp = response.json();
+                console.log(resp);
+                
+            }
+        );
+    }
+
+
+
+    getAPIErrands(){
+        const url:string = "https://" + this.company + ".teamwork.com/projects/"+ this.project_id + "/tasklists.json"; //just test projects tasklists
+        // const url:string = "https://" + this.company + ".teamwork.com/"+ "/tasklists.json"; //all user tasklists
+        const headers = new Headers({"Authorization": "BASIC " + window.btoa(this.key + ":xxx")});
+        
+        return this.http.get(url, {headers})
+        .map((response: Response) => response.json());
+    }
+
+    getAPITasks(tasklist_id:string){
+        let url:string;
+
+        if(tasklist_id){
+            url = "https://" + this.company + ".teamwork.com/tasklists/"+tasklist_id+ "/tasks.json";
+        } else {
+            url = "https://" + this.company + ".teamwork.com"+ "/tasks.json";
+        }
+        
+        const headers = new Headers({"Authorization": "BASIC " + window.btoa(this.key + ":xxx")});
+        
+        return this.http.get(url, {headers})
+        .map((response: Response) => response.json());
+    }
+
+    // getAPIErrands(){
+    //     const url:string = "https://" + this.company + ".teamwork.com/projects/"+ this.project_id + "/tasklists.json";
+    //     const headers = new Headers({"Authorization": "BASIC " + window.btoa(this.key + ":xxx")});
+    //     return this.http.get(url, {headers})
+    //     .map(
+    //         (response: Response) => {
+    //             const errands = response.json();
+    //             return errands;
+    //             // for(const task of tasks){
+    //             //     task.content = 'jsdhfjsgfj' + task.content;
+    //             // }
+                
+
+    //             // this.errandService.setErrands(test);
+                
+
+    //         }
+    //     );
+    // }
+    
 
     // getTasks(){
     //     const url:string = "https://" + this.company + ".teamwork.com/todo_lists/"+ this.tasklist_id + "/todo_items.json";

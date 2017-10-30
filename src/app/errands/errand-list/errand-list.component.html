@@ -4,6 +4,8 @@
     <button class="btn btn-primary" (click)="onFetchData()">Get data</button>
     <button class="btn btn-primary" (click)="onGetTasks()">Get Tasks</button>
     <button class="btn btn-primary" (click)="onPostTasks()">Post Tasks</button>
+    <button class="btn btn-primary" (click)="onGetErrands()">Get Errands</button>
+    <div>{{errandList}}</div>
     <div class="list-group">
         <app-errand-item 
         *ngFor = "let errandEl of errands"

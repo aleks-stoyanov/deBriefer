@@ -82,7 +82,7 @@
           <div class="col-xs-12">
             <div class="form-group">
               <label for="promoLaunch">Launch Date</label>
-              <input type="text" id="promoLaunch" formControlName="promoLaunch" class="form-control">
+              <input type="date" id="promoLaunch" formControlName="promoLaunch" class="form-control">
             </div>
           </div>
         </div>
@@ -106,7 +106,7 @@
                     <input type="text" class="form-control" formControlName="deliverableUrl" >                  
                 </div>
                 <div class="col-xs-4">                  
-                    <button class="btn btn-danger">X</button>                  
+                    <button type="button" class="btn btn-danger" (click)="onRemoveDeliverable(i)">X</button>                  
                 </div>
               </div>
             
