@@ -16,8 +16,7 @@ import { MainHeroComponent } from './main-area/main-hero/main-hero.component';
 import { DrawerHeroComponent } from './drawer-area/drawer-hero/drawer-hero.component';
 
 import {ErrandService} from './errands/errand.service';
-import {UserStorageService} from './shared/user-storage.service';
-import {TaskListService} from './shared/task-list.service';
+import {TwApiService} from './shared/tw-api.service';
 import { ErrandFormComponent } from './errands/errand-form/errand-form.component';
 
 
@@ -43,7 +42,7 @@ import { ErrandFormComponent } from './errands/errand-form/errand-form.component
     ReactiveFormsModule,
 
   ],
-  providers: [ErrandService, UserStorageService, TaskListService, ErrandService],
+  providers: [ErrandService, TwApiService, ErrandService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

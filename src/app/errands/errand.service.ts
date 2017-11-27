@@ -22,12 +22,7 @@ export class ErrandService {
     //     {progress: '68', taskName: 'Name of Task3', taskID: '#', taskAssignee:'Aleksandar Stoyanov', taskStart: '23/07/2017', taskEnd:'27/07/2017'}
     //   ])
     ];
-
-    setErrands(errands: Errand[]) {
-        this.errands=errands;
-        this.errandsChanged.next(this.errands.slice());
-        console.log(this.errands);
-    }
+    
     getErrands() {
         return this.errands.slice();
     }

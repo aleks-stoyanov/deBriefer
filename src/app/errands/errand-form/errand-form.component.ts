@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormArray, Validators } from '@angular/forms';
 
-import {TaskListService} from '../../shared/task-list.service';
+import {TwApiService} from '../../shared/tw-api.service';
 
 import {ErrandService} from '../errand.service';
 import {Errand} from '../errand.model';
@@ -16,7 +16,7 @@ import 'rxjs/Rx';
 export class ErrandFormComponent implements OnInit {
   errandForm: FormGroup;
 
-  constructor(private errandService:ErrandService, private taskListService: TaskListService) { }
+  constructor(private errandService:ErrandService, private twApiService: TwApiService) { }
 
   ngOnInit() {
     this.initForm();    
@@ -70,11 +70,11 @@ export class ErrandFormComponent implements OnInit {
       const url:string = "https://" + this.company + ".teamwork.com/projects/"+ this.project_id + "/tasklists.json";
   
       //this.errandService.addErrand(newErrand);
-      //this.taskListService.postErrand(url, errandName, errandDescription, this.key);
+      //this.twApiService.postErrand(url, errandName, errandDescription, this.key);
       
-      this.taskListService.postErrand(url, errandName, errandDescription, this.key)
+      this.twApiService.postErrand(url, errandName, errandDescription, this.key)
       .subscribe(
-        data => this.taskListService.postAPITasks(data["TASKLISTID"],taskName,taskDescription, launchDate), 
+        data => this.twApiService.postAPITasks(data["TASKLISTID"],taskName,taskDescription, launchDate), 
         error => alert(error),
         // () => console.log(this.errandForm.value['promoDeliverables'])
         () => window.location.reload()

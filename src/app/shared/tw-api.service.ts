@@ -9,7 +9,7 @@ import 'rxjs/Rx';
 
 @Injectable()
 
-export class TaskListService {
+export class TwApiService {
     constructor(private http: Http, private errandService: ErrandService) {}
 
     date = new Date();
@@ -23,12 +23,7 @@ export class TaskListService {
     task_name = "This is an example task created with AJAX using JSON.";
     due_date = this.date.getFullYear() + (this.month < 10 ? '0' : '') + this.month + (this.day < 10 ? '0' : '') + this.day;    
     json = {"todo-item": { "content": this.task_name, "due-date": this.due_date }};
-    
-    postTasks(){
-        const url:string = "https://" + this.company + ".teamwork.com/todo_lists/"+ this.tasklist_id + "/todo_items.json";
-        const headers = new Headers({"Authorization": "BASIC " + window.btoa(this.key + ":xxx")});
-        return this.http.post(url, this.json, {headers});
-    }
+
     
     getTasks(){
         const url:string = "https://" + this.company + ".teamwork.com/todo_lists/"+ this.tasklist_id + "/todo_items.json";
@@ -45,18 +40,7 @@ export class TaskListService {
     postErrand(url:string, errandName:string, errandDescription: string, key:string){
         const headers = new Headers({"Authorization": "BASIC " + window.btoa(this.key + ":xxx")});
         const errandJson = {"todo-list": { "name": errandName, "description": errandDescription }};
-        console.log(url);
-        console.log(errandJson);
-        console.log(headers);
-        // return this.http.post(url, errandJson, {headers})
-        // .subscribe(
-        //     (response: Response) => {
-        //         const resp = response.json();
-        //         console.log(resp);
-                
-        //     }
-        // );
-
+      
         return this.http.post(url, errandJson, {headers})
         .map((response: Response) => response.json());
     }
