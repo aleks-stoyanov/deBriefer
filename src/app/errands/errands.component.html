@@ -1,13 +1,52 @@
-<div class="errands clearfix">
-    <div class="col-xs-10 col-xs-offset-2 col-md-11 col-md-offset-1"> 
+<div class="row row-offcanvas row-offcanvas-right errands clearfix">
+    
         
-        <app-errand-list></app-errand-list>
-
-        <app-errand-details    
-        *ngIf="selectedErrand; else infoText" 
-        [errand]="selectedErrand"></app-errand-details>
-        <ng-template #infoText>
-            <p>Please Select an Errand</p>
-        </ng-template>
+    <!-- main area -->
+    <div class="col-xs-12 errand-list" [ngClass]="{'col-sm-9': selectedErrand}">
+        <div class="main-hero clearfix">
+            <div class="col-xs-10 col-xs-offset-2 col-md-11 col-md-offset-1"> 
+                <h1>Ahoy, firstName</h1>
+                <p>You have X errands in the delivery pipeline</p>
+            </div>
+            <button class="btn-round btn-add" type="button" data-toggle="modal" data-target="#myModal">
+                <i class="glyphicon glyphicon-plus"></i>
+            </button>
+        </div>
+        
+        <div class="col-xs-offset-1">
+            <app-errand-list></app-errand-list>
+        </div>
+        
     </div>
+
+    <!-- drawer -->
+    <div class="col-xs-6 col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation" *ngIf="selectedErrand">
+        <app-errand-details    
+            *ngIf="selectedErrand" 
+            [errand]="selectedErrand">
+        </app-errand-details>
+    </div>
+    <!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog modal-lg">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">New Errand :: Microsite</h4>
+      </div>
+      <div class="modal-body">
+            <app-errand-form></app-errand-form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+    
+    
 </div>

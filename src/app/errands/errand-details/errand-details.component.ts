@@ -13,4 +13,8 @@ export class ErrandDetailsComponent implements OnInit {
   ngOnInit() {
   }
 
+  onCloseDrawer(){
+    
+  }
+
 }

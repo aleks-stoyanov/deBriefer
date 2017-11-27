@@ -22,3 +22,9 @@
   select.ng-invalid.ng-touched {
     border:1px solid red;
   }
+
+  .promoDeliverableSet .form-group.promoDeliverableName {width:66%;padding-right: 0.5%; display: inline-block;}
+  .promoDeliverableSet .form-group.promoDeliverableVersions {width:32%;display: inline-block;}
+  .label-placeholder {visibility: hidden;}
+  .btn-link.btn-red {color: red;}
+  .disabled { pointer-events: none; cursor: default; opacity: 0.4;}

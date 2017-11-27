@@ -58,3 +58,24 @@ h3 {margin: 24px 0px 0px 0px;color: #959da5; font-weight: 600;}
 .progress-circle .progress-circle__slice {clip: rect(0px, 36px, 36px, 18px);}
 .progress-circle .progress-circle__slice .progress-circle__fill {clip: rect(0px, 18px, 36px, 0px);background-color: #2db8e8;}
 .progress-circle .progress-circle__overlay {width: 30px;height: 30px;margin-left: 3px;margin-top: 3px;line-height: 30px;}
+
+.drawer-hero {position: relative;min-height: 270px;}
+.drawer-hero img {position: absolute; z-index: 200;}
+.drawer-hero .nav {position: relative; z-index: 201; }
+.drawer-hero .nav.navbar-right {margin-right: 0px}
+.drawer-hero .nav li a { 
+    color: #fff;
+    padding: 16px 16px 16px 16px;
+    opacity: 0.54;
+    cursor: pointer;    
+    -webkit-transition: opacity 0.4s ease-out;
+    -moz-transition: opacity 0.4s ease-out;
+    transition: opacity 0.4s ease-out;
+}
+.drawer-hero .nav li a:hover { 
+    background: transparent;
+    opacity: 1;
+    -webkit-transition: opacity 0.4s ease-out;
+    -moz-transition: opacity 0.4s ease-out;
+    transition: opacity 0.4s ease-out;
+}

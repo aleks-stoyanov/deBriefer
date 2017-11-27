@@ -1,24 +1,20 @@
+
 <div class="row">
   <div class="col-xs-12">
-    <button class="btn btn-primary" (click)="onSaveData()">Save data</button>
-    <button class="btn btn-primary" (click)="onFetchData()">Get data</button>
-    <button class="btn btn-primary" (click)="onGetTasks()">Get Tasks</button>
-    <button class="btn btn-primary" (click)="onPostTasks()">Post Tasks</button>
-    <button class="btn btn-primary" (click)="onGetErrands()">Get Errands</button>
 
-    <div class="row">
-        
-        <ul class="nav navbar-nav">
-            <li><button class="btn-round btn-add" type="button">
-                <i class="glyphicon glyphicon-plus"></i>
-                </button></li>
+    <div class="row list-management">        
+        <ul class="nav navbar-nav col-xs-offset-1">
             <li class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                 All
                 <span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                <li><a href="#">All</a></li>
-                <li><a href="#">Mine</a></li>
+                    <li class="dropdown-header">In development</li>
+                    <li class="divider"></li>
+                    <li class="disabled"><a href="#">All Companies</a></li>
+                    <li class="disabled"><a href="#">TB Only</a></li>
+                    <li class="disabled"><a href="#">TM Only</a></li>
+                    <li class="disabled"><a href="#">PTI Only</a></li>
                 </ul>
             </li>
             <li class="dropdown">
@@ -26,13 +22,15 @@
                 Most Urgent
                 <span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                <li><a href="#">Most Urgent</a></li>
-                <li><a href="#">Most Recent</a></li>
+                    <li class="dropdown-header">In development</li>
+                    <li class="divider"></li>
+                    <li class="disabled"><a href="#">Most Urgent</a></li>
+                    <li class="disabled"><a href="#">Most Recent</a></li>
                 </ul>
             </li>
             </ul>
     </div>
-    <div>{{errandList}}</div>
+    
     <div class="list-group">
         <app-errand-item 
         *ngFor = "let errandEl of errands"
@@ -40,5 +38,6 @@
     </div>
   </div>
 </div>
+
 
 

@@ -48,14 +48,17 @@ export class TaskListService {
         console.log(url);
         console.log(errandJson);
         console.log(headers);
-        return this.http.post(url, errandJson, {headers})
-        .subscribe(
-            (response: Response) => {
-                const resp = response.json();
-                console.log(resp);
+        // return this.http.post(url, errandJson, {headers})
+        // .subscribe(
+        //     (response: Response) => {
+        //         const resp = response.json();
+        //         console.log(resp);
                 
-            }
-        );
+        //     }
+        // );
+
+        return this.http.post(url, errandJson, {headers})
+        .map((response: Response) => response.json());
     }
 
 
@@ -84,57 +87,35 @@ export class TaskListService {
         .map((response: Response) => response.json());
     }
 
-    // getAPIErrands(){
-    //     const url:string = "https://" + this.company + ".teamwork.com/projects/"+ this.project_id + "/tasklists.json";
-    //     const headers = new Headers({"Authorization": "BASIC " + window.btoa(this.key + ":xxx")});
-    //     return this.http.get(url, {headers})
-    //     .map(
-    //         (response: Response) => {
-    //             const errands = response.json();
-    //             return errands;
-    //             // for(const task of tasks){
-    //             //     task.content = 'jsdhfjsgfj' + task.content;
-    //             // }
-                
+    yyyymmdd(date:Date){
+        const mm = date.getMonth() + 1; // getMonth() is zero-based
+        var dd = date.getDate();
+      
+        return [date.getFullYear(),
+                (mm>9 ? '' : '0') + mm,
+                (dd>9 ? '' : '0') + dd
+               ].join('');
+    }
 
-    //             // this.errandService.setErrands(test);
+    postAPITasks(tasklist_id:string, taskName: string, taskDescription: string, taskDueDate: Date){
+        const dueDate:string = this.yyyymmdd(taskDueDate);
+        console.log(taskDescription);
+        const url:string = "https://" + this.company + ".teamwork.com/tasklists/"+ tasklist_id + "/tasks.json";
+        const taskJson = {"todo-item": { "content": taskName, "description": taskDescription, "due-date": dueDate  }};
+        const headers = new Headers({"Authorization": "BASIC " + window.btoa(this.key + ":xxx")});
+        
+        
+        return this.http.post(url, taskJson, {headers})
+        .subscribe(
+            (response: Response) => {
+                const resp = response.json();
+                console.log(resp);
                 
+            }
+        );
+    }
 
-    //         }
-    //     );
-    // }
     
-
-    // getTasks(){
-    //     const url:string = "https://" + this.company + ".teamwork.com/todo_lists/"+ this.tasklist_id + "/todo_items.json";
-    //     const headers = new Headers({"Authorization": "BASIC " + window.btoa(this.key + ":xxx")});
-    //     return this.http.get(url, {headers})
-    //     .subscribe(
-    //         (response: Response) => {
-    //             const tasks = response.json();
-    //             console.log(tasks);
-    //             for(const task of tasks){
-    //                 task.content = '''+ task.content;
-    //             }
-                
-
-    //             // const test: Errand[] = [
-    //             //     new Errand(12, "[1129] Canon Austria Mobile Money Cashback", "Martin Nenchev", "Janice Janice", "26/10/2016", 
-    //             //     [ {progress: '25', phase: 'Coordination', phaseID: 'cd', taskName: 'Name of Coordination Task1', taskURL: '#', taskStart: '23/07/2017', taskEnd:'27/07/2017'},
-    //             //       {progress: '85', phase: 'Design', phaseID: 'ds', taskName: 'Name of Design Task1', taskURL: '#', taskStart: '23/07/2017', taskEnd:'27/07/2017'},
-    //             //       {progress: '68', phase: 'Front End', phaseID: 'fe', taskName: 'Name of Slice Task1', taskURL: '#', taskStart: '23/07/2017', taskEnd:'27/07/2017'}
-    //             //     ]),
-    //             //     new Errand(12, "[xxxx] Canon Austria Mobile Money Cashback", "Martin Nenchev", "Janice Carlin", "26/10/2016", 
-    //             //     [ {progress: '25', phase: 'Coordination', phaseID: 'cd', taskName: 'Name of Coordination Task1', taskURL: '#', taskStart: '23/07/2017', taskEnd:'27/07/2017'},
-    //             //       {progress: '85', phase: 'Design', phaseID: 'ds', taskName: 'Name of Design Task1', taskURL: '#', taskStart: '23/07/2017', taskEnd:'27/07/2017'},
-    //             //       {progress: '68', phase: 'Front End', phaseID: 'fe', taskName: 'Name of Slice Task1', taskURL: '#', taskStart: '23/07/2017', taskEnd:'27/07/2017'}
-    //             //     ])
-    //             // ];
-    //             // 
-    //             // this.errandService.setErrands(test);
-    //         }
-    //     );
-    // }
 
     
 }

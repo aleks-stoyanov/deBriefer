@@ -97,7 +97,7 @@ export class ErrandListComponent implements OnInit {
     let totalEstimate: number=0;
     let remainingMinutes:number = 100;
     let todayDate = new Date();
-    let launchDate = new Date("2015-10-20");
+    let launchDate = new Date("2015-11-27");
 
 
 
